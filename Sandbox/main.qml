@@ -16,16 +16,26 @@ Window {
     property Item dynamicallyCreatedItem
 
     Component.onCompleted: {
-        dynamicallyCreatedItem = Qt.createComponent('qrc:/Sandbox.qml').createObject(window.contentItem, {value1: 0.5, value2:0.5,
+        dynamicallyCreatedItem = Qt.createComponent('qrc:/Sandbox.qml').createObject(window, {value1: 0.5, value2:0.5,
                                                                                          value3:0.5, value4:0.5, value5:0.5, value6:0.5,
                                                                                          isEnabled1: false, isEnabled2: false, isEnabled3: false})
         //dynamicallyCreatedItem.id = "item"
         //for (var prop in dynamicallyCreatedItem) {
         //    print(prop += " (" + typeof(dynamicallyCreatedItem[prop]) + ") = " + dynamicallyCreatedItem[prop]);
         //}
+
         var view = dynamicallyCreatedItem.children[0]
         view.parent = window.contentItem
         view.renderMode = View3D.Underlay
+
+
+
+       /* for(var child in dynamicallyCreatedItem.children)
+        {
+            //print(dynamicallyCreatedItem.children[child])
+            dynamicallyCreatedItem.children[child].parent = window.contentItem
+            dynamicallyCreatedItem.children[child].renderMode = View3D.Underlay
+        }*/
 
         toptitle.text = dynamicallyCreatedItem.sessionText
     }
@@ -170,18 +180,31 @@ Window {
 
             CheckBox {
                // Layout.alignment: Qt.AlignCenter
-                checked: true
+                id: ch1
                 text: qsTr("isEnabled 1")
+                checked:  dynamicallyCreatedItem.isEnabled1
+                onToggled: {
+                    print("clicked")
+                    dynamicallyCreatedItem.isEnabled1 = ch1.checked
+                }
 
             }
             CheckBox {
+                id: ch2
                 text: qsTr("isEnabled 2")
-               // Layout.alignment: Qt.AlignCenter
+                checked:  dynamicallyCreatedItem.isEnabled2
+                onToggled: {
+                    print("clicked")
+                    dynamicallyCreatedItem.isEnabled2 = ch2.checked
+                }
             }
             CheckBox {
-                checked: true
+                id: ch3
                 text: qsTr("isEnabled 3")
-                //Layout.alignment: Qt.AlignCenter
+                checked:  dynamicallyCreatedItem.isEnabled3
+                onToggled: {
+                    dynamicallyCreatedItem.isEnabled3 = ch3.checked
+                }
             }
         }
     }
