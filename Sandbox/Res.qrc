@@ -1,5 +1,17 @@
 <RCC>
     <qresource prefix="/">
         <file>Sandbox.qml</file>
+        <file>textures/ConcreteWall01_MR_2K/AO.png</file>
+        <file>textures/ConcreteWall01_MR_2K/BaseColor.png</file>
+        <file>textures/ConcreteWall01_MR_2K/Height.png</file>
+        <file>textures/ConcreteWall01_MR_2K/Normal.png</file>
+        <file>textures/ConcreteWall01_MR_2K/Roughness.png</file>
+        <file>textures/decorative_wall/ambientocclusion.png</file>
+        <file>textures/decorative_wall/basecolor.png</file>
+        <file>textures/decorative_wall/height.png</file>
+        <file>textures/decorative_wall/metallic.png</file>
+        <file>textures/decorative_wall/normal.png</file>
+        <file>textures/decorative_wall/roughness.png</file>
+        <file>textures/hdr/monte_scherbelino_2k.hdr</file>
     </qresource>
 </RCC>
