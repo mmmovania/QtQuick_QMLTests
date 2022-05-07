@@ -5,6 +5,7 @@ import QtQuick.Layouts
 
 
 Window {
+
     id:window
     width: 640
     height: 480
@@ -15,35 +16,20 @@ Window {
     //https://doc.qt.io/qt-5/qtqml-javascript-dynamicobjectcreation.html
     property Item dynamicallyCreatedItem
 
+
+
+
     Component.onCompleted: {
         dynamicallyCreatedItem = Qt.createComponent('qrc:/Sandbox.qml').createObject(window, {value1: 0.5, value2:0.5,
                                                                                          value3:0.5, value4:0.5, value5:0.5, value6:0.5,
                                                                                          isEnabled1: false, isEnabled2: false, isEnabled3: false})
-        //dynamicallyCreatedItem.id = "item"
-        //for (var prop in dynamicallyCreatedItem) {
-        //    print(prop += " (" + typeof(dynamicallyCreatedItem[prop]) + ") = " + dynamicallyCreatedItem[prop]);
-        //}
-
-        var view = dynamicallyCreatedItem.children[0]
-        view.parent = window.contentItem
-        view.renderMode = View3D.Underlay
-
-
-
-       /* for(var child in dynamicallyCreatedItem.children)
-        {
-            //print(dynamicallyCreatedItem.children[child])
-            dynamicallyCreatedItem.children[child].parent = window.contentItem
-            dynamicallyCreatedItem.children[child].renderMode = View3D.Underlay
-        }*/
-
         toptitle.text = dynamicallyCreatedItem.sessionText
     }
 
     Label {
         id: toptitle
         anchors.horizontalCenter: parent.horizontalCenter
-        text: "Hello"
+        text: "Place holder text"
         anchors.top: parent.top
 
         color: "#ffffff"

@@ -4,6 +4,7 @@ import QtQuick3D.Helpers
 
 Item {
     id:sandbox
+    anchors.fill: parent
 
     //inputs
     required property real value1;
@@ -37,7 +38,7 @@ Item {
                 castsShadow: true
             }
 
-            PointLight {
+         /*   PointLight {
                 position: Qt.vector3d(0, 100, 0)
                 //visible: isEnabled2
                 castsShadow: true
@@ -48,7 +49,7 @@ Item {
                // visible: isEnabled3
                 castsShadow: true
                 shadowFactor: 50
-            }
+            }*/
 
             //our Lightbox model
             Node {
@@ -123,12 +124,12 @@ Item {
 
     View3D
     {
-        id:leftView
-        //anchors.fill: parent
+       // anchors.fill: parent
         anchors.top:  parent.top
         anchors.bottom: parent.bottom
         anchors.left: parent.left
         width: parent.width*0.5
+        renderMode: View3D.Underlay
 
         environment: SceneEnvironment {
             lightProbe: Texture {
@@ -148,19 +149,12 @@ Item {
 
     View3D
     {
-        id:rightView
         anchors.top:  parent.top
         anchors.bottom: parent.bottom
         anchors.right: parent.right
-       // anchors.left: parent.left
         width: parent.width*0.5
-
+        renderMode: View3D.Underlay
 
         importScene: sceneRoot
-
-
-
     }
-
-
 }
