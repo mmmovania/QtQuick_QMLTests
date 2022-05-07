@@ -1,4 +1,4 @@
-import QtQuick 2.0
+import QtQuick
 import QtQuick3D
 
 Item {
@@ -38,11 +38,13 @@ Item {
         }
 
         Model {
-            source: "#Cube"
+            //source: "#Cube"
+            source: "#Sphere"
+            eulerRotation.y: 30
             materials: PrincipledMaterial {
                 baseColor: "red"
-                metalness: 0.0
-                roughness: 0.0
+                metalness: value1
+                roughness: value2
             }
         }
     }

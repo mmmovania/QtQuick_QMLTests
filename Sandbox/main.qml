@@ -52,93 +52,136 @@ Window {
 
 
             RowLayout {
-                Layout.alignment: Qt.AlignCenter
+                //Layout.alignment: Qt.AlignCenter
                 Label {
                     text: qsTr("Value 1")
                 }
 
                 Slider {
+                    id: s1
                     from: 0.0
                     value: 0.5
                     to: 1.0
+                    onValueChanged: dynamicallyCreatedItem.value1 = s1.value
+                }
+                Label
+                {
+                    text: s1.value
+                    width:10
                 }
             }
 
             RowLayout {
-                Layout.alignment: Qt.AlignCenter
+               // Layout.alignment: Qt.AlignCenter
                 Label {
                     text: qsTr("Value 2")
                 }
                 Slider {
+                    id: s2
                     from: 0.0
                     value: 0.5
                     to: 1.0
+
+                    onValueChanged: dynamicallyCreatedItem.value2 = s2.value
+                }
+                Label
+                {
+                    text: s2.value
+                    width:10
                 }
             }
 
             RowLayout {
-                Layout.alignment: Qt.AlignCenter
+               // Layout.alignment: Qt.AlignCenter
                 Label {
                     text: qsTr("Value 3")
                 }
                 Slider {
+                    id:s3
                     from: 0.0
                     value: 0.5
                     to: 1.0
+                    onValueChanged: dynamicallyCreatedItem.value3 = s3.value
+                }
+                Label
+                {
+                    text: s3.value
+                    width:10
                 }
             }
 
             RowLayout {
-                Layout.alignment: Qt.AlignCenter
+                //Layout.alignment: Qt.AlignCenter
                 Label {
                     text: qsTr("Value 4")
                 }
                 Slider {
+                    id:s4
                     from: 0.0
                     value: 0.5
                     to: 1.0
+                    onValueChanged: dynamicallyCreatedItem.value4 = s4.value
+                }
+                Label
+                {
+                    text: s4.value
+                    width:10
                 }
             }
 
             RowLayout {
-                Layout.alignment: Qt.AlignCenter
+               // Layout.alignment: Qt.AlignCenter
                 Label {
                     text: qsTr("Value 5")
                 }
                 Slider {
+                    id:s5
                     from: 0.0
                     value: 0.5
                     to: 1.0
+                    onValueChanged: dynamicallyCreatedItem.value5 = s5.value
+                }
+                Label
+                {
+                    text: s5.value
+                    width:10
                 }
             }
 
             RowLayout {
-                Layout.alignment: Qt.AlignCenter
+               // Layout.alignment: Qt.AlignCenter
                 Label {
                     text: qsTr("Value 6")
                 }
                 Slider {
+                    id:s6
                     from: 0.0
                     value: 0.5
                     to: 1.0
+                    onValueChanged: dynamicallyCreatedItem.value6 = s6.value
+                }
+                Label
+                {
+                    text: s6.value
+                    width:10
                 }
             }
 
 
             CheckBox {
-                Layout.alignment: Qt.AlignCenter
+               // Layout.alignment: Qt.AlignCenter
                 checked: true
                 text: qsTr("isEnabled 1")
 
             }
             CheckBox {
                 text: qsTr("isEnabled 2")
-                Layout.alignment: Qt.AlignCenter
+               // Layout.alignment: Qt.AlignCenter
             }
             CheckBox {
                 checked: true
                 text: qsTr("isEnabled 3")
-                Layout.alignment: Qt.AlignCenter
+                //Layout.alignment: Qt.AlignCenter
             }
         }
     }
