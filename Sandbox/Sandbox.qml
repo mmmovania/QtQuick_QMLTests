@@ -24,27 +24,27 @@ Item {
     View3D {
         anchors.fill: parent
 
-        environment: SceneEnvironment {
-            clearColor: "black"
-            backgroundMode: SceneEnvironment.Color
-        }
-
         PerspectiveCamera {
             z: 300
         }
 
-        DirectionalLight {
+        Node
+        {
+            x: 50
 
-        }
+            DirectionalLight {
 
-        Model {
-            //source: "#Cube"
-            source: "#Sphere"
-            eulerRotation.y: 30
-            materials: PrincipledMaterial {
-                baseColor: "red"
-                metalness: value1
-                roughness: value2
+            }
+
+            Model {
+                //source: "#Cube"
+                source: "#Sphere"
+                eulerRotation.y: 30
+                materials: PrincipledMaterial {
+                    baseColor: "red"
+                    metalness: value1
+                    roughness: value2
+                }
             }
         }
     }
